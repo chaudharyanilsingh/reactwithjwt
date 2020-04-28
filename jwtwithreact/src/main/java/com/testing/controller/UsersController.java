@@ -1,4 +1,6 @@
 package com.testing.controller;
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -31,6 +33,11 @@ public class UsersController {
 	public UsersDto getUser(@PathVariable(value="id") int id) {
 		System.out.println(id);
 		return usersService.getUserById(id);
+	}
+	@GetMapping("/all")
+	public List<UsersDto> getAllUsers() {
+		System.out.println(usersService.getAllUsers());
+		return usersService.getAllUsers();
 	}
 	
 
